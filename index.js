@@ -3,7 +3,7 @@ const { type } = require("os");
 const generateMarkdown = require("./utils/generateMarkdown")
 const fs = require("fs");
 const { error } = require("console");
-const inquirer = rquire("inquirer")
+const inquirer = require("inquirer")
 /*
 WHEN I enter my project title
 WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
@@ -19,7 +19,7 @@ THEN I am taken to the corresponding section of the README
 
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
 {
     type: "input",
         message: "what is the project title?",
@@ -33,7 +33,7 @@ const questions = [];
 {
     type: "list",
         message: "choose the following license",
-            choices: ["MIT", "IBM", "Apache", "No License"]
+            choices: ["MIT", "IBM", "Apache", "No License"],
     name: "license"
 },
 {
@@ -46,7 +46,7 @@ const questions = [];
         message: "what is your email?",
             name: "email"
 }
-
+]
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
